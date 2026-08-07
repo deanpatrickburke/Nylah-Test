@@ -1,1 +1,1 @@
-{"build":"v145-beirt-scalable-fixes","code":145,"changelog":"fix couple_data trigger nylah-%, PIN bcrypt ash-ciaran, code ASHCI, dynamic WhoScreen person_1/2, Settings guard, offline respect"}
+{"build":"v146-beirt-fix-white-screen","code":146,"changelog":"fix vite base absolute /assets/ causing white screen, run via bun build.mjs so relative ./assets/ + GH pages"}
