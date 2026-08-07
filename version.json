@@ -1,1 +1,1 @@
-{"build":"v144-beirt-scalable","code":144,"changelog":"scalable: households+invites+pins normalized, no hard-coded ash-ciaran, create/join via 6-char code, dynamic PersonKey, offline respect, reallyOnline fix"}
+{"build":"v145-beirt-scalable-fixes","code":145,"changelog":"fix couple_data trigger nylah-%, PIN bcrypt ash-ciaran, code ASHCI, dynamic WhoScreen person_1/2, Settings guard, offline respect"}
