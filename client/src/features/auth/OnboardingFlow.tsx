@@ -419,10 +419,7 @@ export function OnboardingFlow({ onComplete }: OnboardingProps) {
             <div className="mt-4 w-full space-y-3">
               <button
                 type="button"
-                onClick={() => {
-                  setConnectionType("couple");
-                  try { document.documentElement.setAttribute("data-connection", "couple"); } catch {}
-                }}
+                onClick={() => setConnectionType("couple")}
                 className={`w-full flex items-start gap-3 rounded-[18px] border p-3.5 text-left transition active:scale-[0.98] ${connectionType==="couple" ? "bg-white border-[#0A0A0A] shadow-sm ring-1 ring-[#0A0A0A]" : "bg-[var(--chip-bg)] border-[var(--border)] opacity-80"}`}
               >
                 <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#FFE8D6]">
@@ -440,10 +437,7 @@ export function OnboardingFlow({ onComplete }: OnboardingProps) {
               </button>
               <button
                 type="button"
-                onClick={() => {
-                  setConnectionType("friends");
-                  try { document.documentElement.setAttribute("data-connection", "friends"); } catch {}
-                }}
+                onClick={() => setConnectionType("friends")}
                 className={`w-full flex items-start gap-3 rounded-[18px] border p-3.5 text-left transition active:scale-[0.98] ${connectionType==="friends" ? "bg-white border-[#0A0A0A] shadow-sm ring-1 ring-[#0A0A0A]" : "bg-[var(--chip-bg)] border-[var(--border)] opacity-80"}`}
               >
                 <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#E0F2FE]">

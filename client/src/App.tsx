@@ -115,14 +115,18 @@ export function App() {
       const isInk = mappedId === 'ink';
       const r = document.documentElement;
       r.setAttribute('data-theme', isInk ? 'ink' : 'beige');
-      const conn = localStorage.getItem('couple_v1_connection_type') || 'couple';
-      r.setAttribute('data-connection', conn);
+      if (onboardingDone) {
+        const conn = localStorage.getItem('couple_v1_connection_type') || 'couple';
+        r.setAttribute('data-connection', conn);
+      } else {
+        r.removeAttribute('data-connection');
+      }
       if (rawId !== mappedId) {
         try { localStorage.setItem('couple_v1_theme', JSON.stringify(mappedId)); } catch {}
         try { setThemeId(mappedId); } catch {}
       }
     } catch {}
-  }, [theme, themeId, setThemeId]);
+  }, [theme, themeId, setThemeId, onboardingDone]);
 
   // confetti — verbatim 24-node 1.15s, palette #A89FDA var(--border) #D0A1EA var(--wash-top) #FACC15 #6EE7B7 #FB923C
   function triggerConfetti(origin?: any) {
