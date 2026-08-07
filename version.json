@@ -1,1 +1,1 @@
-{"build":"v138-beirt-icon-installable","code":138,"changelog":"fix generic Google logo — manifest any+maskable ../icon paths, apple-touch real icon not 1x1 placeholder, full-bleed 84% centered icon","mandatory":false}
+{"build":"v139-beirt-dark-deck","code":139,"changelog":"fix deck white-on-white dark mode","mandatory":false}
