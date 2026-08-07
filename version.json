@@ -1,1 +1,7 @@
-{"build":"v151-manifest-fix","code":151,"changelog":"fix double manifest, use any circle 21k 110k + maskable square 17k 102k, strip old hashed manifest"}
+{
+  "build": "v155-fix-email-persons",
+  "code": 155,
+  "changelog": "fix email recovery returning Partner 1/2 -> real names Aisling/Ciaran, normalize persons from household name",
+  "mandatory": false,
+  "builtAt": "2026-08-07T19:14:36.369568Z"
+}
