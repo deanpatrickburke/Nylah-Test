@@ -419,10 +419,17 @@ export function OnboardingFlow({ onComplete }: OnboardingProps) {
             <div className="mt-4 w-full space-y-3">
               <button
                 type="button"
-                onClick={()=> setConnectionType("couple")}
+                onClick={() => {
+                  setConnectionType("couple");
+                  try { document.documentElement.setAttribute("data-connection", "couple"); } catch {}
+                }}
                 className={`w-full flex items-start gap-3 rounded-[18px] border p-3.5 text-left transition active:scale-[0.98] ${connectionType==="couple" ? "bg-white border-[#0A0A0A] shadow-sm ring-1 ring-[#0A0A0A]" : "bg-[var(--chip-bg)] border-[var(--border)] opacity-80"}`}
               >
-                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#FFE8D6] text-[16px]">♥</span>
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#FFE8D6]">
+                  <svg className="w-5 h-5 text-[#E07A5F]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                </span>
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
                     <span className="text-[14px] font-semibold text-[#0A0A0A]">Couple</span>
@@ -433,10 +440,17 @@ export function OnboardingFlow({ onComplete }: OnboardingProps) {
               </button>
               <button
                 type="button"
-                onClick={()=> setConnectionType("friends")}
+                onClick={() => {
+                  setConnectionType("friends");
+                  try { document.documentElement.setAttribute("data-connection", "friends"); } catch {}
+                }}
                 className={`w-full flex items-start gap-3 rounded-[18px] border p-3.5 text-left transition active:scale-[0.98] ${connectionType==="friends" ? "bg-white border-[#0A0A0A] shadow-sm ring-1 ring-[#0A0A0A]" : "bg-[var(--chip-bg)] border-[var(--border)] opacity-80"}`}
               >
-                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#E0F2FE] text-[16px]">🤝</span>
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#E0F2FE]">
+                  <svg className="w-5 h-5 text-[#0284C7]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </span>
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
                     <span className="text-[14px] font-semibold text-[#0A0A0A]">Friends</span>

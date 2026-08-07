@@ -106,7 +106,7 @@ export function App() {
   const safeSetTab = typeof setTab === 'function' ? setTab : (()=>{}) as any;
   const safePhoneInnerRef = phoneInnerRef || { current: null } as any;
 
-  // — theme owns styling via CSS — JS only flips data-theme attribute
+  // — theme owns styling via CSS — JS only flips data-theme & data-connection attribute
   React.useEffect(() => {
     try {
       const legacyMap: Record<string,string> = { peach:'beige', butter:'beige', lavender:'beige', terracotta:'beige', mint:'beige', paper:'beige', cream:'beige', midnight:'ink' };
@@ -115,6 +115,8 @@ export function App() {
       const isInk = mappedId === 'ink';
       const r = document.documentElement;
       r.setAttribute('data-theme', isInk ? 'ink' : 'beige');
+      const conn = localStorage.getItem('couple_v1_connection_type') || 'couple';
+      r.setAttribute('data-connection', conn);
       if (rawId !== mappedId) {
         try { localStorage.setItem('couple_v1_theme', JSON.stringify(mappedId)); } catch {}
         try { setThemeId(mappedId); } catch {}

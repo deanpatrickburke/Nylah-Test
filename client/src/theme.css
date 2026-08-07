@@ -112,6 +112,22 @@
   --space-accent: var(--lav);
 }
 
+/* ========== FRIENDS MODE OVERRIDES (Cool Sky & Slate) ========== */
+html[data-connection="friends"]:not([data-theme="ink"]) {
+  --bg: #F0F4F8;
+  --bg-2: #F0F4F8;
+  --phone-bg: linear-gradient(180deg, #D4E4F7 0%, #E8F1FA 18%, #FFFEFB 62%);
+  --wash-top: #D4E4F7;
+  --wash-mid: #E8F1FA;
+  --accent: #0284C7;
+  --accent-strong: #0369A1;
+  --accent-warm: #0284C7;
+  --border: #CBD5E1;
+  --card-bd: #CBD5E1;
+  --chip-bg: #E8F1FA;
+  --nav-active-bg: #0284C7;
+}
+
 /* ========== 2) TOKENS — Dark (Charcoal Orange / Ink / Hume) ========== */
 /* Single definitive dark block. JS only flips data-theme="ink". */
 html[data-theme="ink"],

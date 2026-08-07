@@ -153,16 +153,42 @@ export function getHouseholdPersonsRaw(): any[] | null {
   } catch {}
   return null;
 }
+export function getPartnerKey(currentUser: PersonKey | string): PersonKey {
+  try {
+    const persons = getHouseholdPersonsRaw();
+    if (Array.isArray(persons) && persons.length >= 2) {
+      const other = persons.find((p: any) => p && p.key && p.key !== currentUser);
+      if (other?.key) return other.key as PersonKey;
+    }
+  } catch {}
+  if (currentUser === "person_1") return "person_2" as PersonKey;
+  if (currentUser === "person_2") return "person_1" as PersonKey;
+  if (currentUser === "aisling") return "ciaran" as PersonKey;
+  if (currentUser === "ciaran") return "aisling" as PersonKey;
+  const keys = Object.keys(PERSONS);
+  const other = keys.find(k => k !== currentUser);
+  return (other || "person_2") as PersonKey;
+}
 export function applyCustomPersonNames() {
   try {
     const persons = getHouseholdPersonsRaw();
-    if (!persons || persons.length<2) return;
-    for (const p of persons) {
+    if (!persons || persons.length < 2) return;
+    for (let i = 0; i < persons.length; i++) {
+      const p = persons[i];
       if (!p || !p.key || !p.name) continue;
       const k = p.key as PersonKey;
+      const initial = p.name.trim().slice(0, 1).toUpperCase();
       if (PERSONS[k]) {
         PERSONS[k].name = p.name;
-        if (p.name && p.name.length>0) PERSONS[k].initial = p.name.trim().slice(0,1).toUpperCase();
+        if (p.name && p.name.length > 0) PERSONS[k].initial = initial;
+      } else {
+        PERSONS[k] = {
+          name: p.name,
+          initial,
+          accent: i === 0 ? "#0284C7" : "#0EA5E9",
+          accent2: i === 0 ? "#0369A1" : "#0284C7",
+          wash: i === 0 ? "#E0F2FE" : "#F0F9FF",
+        };
       }
     }
   } catch {}

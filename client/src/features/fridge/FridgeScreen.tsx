@@ -22,10 +22,12 @@ type FridgeProps = {
   syncStatus?: SyncStatus;
 };
 
+import { getPartnerKey } from "../../app/state";
+
 function FridgePage(props: FridgeProps | any) {
   // v120 defensive guards — prevents undefined .filter / .name crashes when App renders without props
   const raw = props || {};
-  const currentUser = (raw.currentUser || "aisling") as PersonKey;
+  const currentUser = (raw.currentUser || "person_1") as PersonKey;
   const chores = Array.isArray(raw.chores) ? raw.chores : [];
   const calendar = Array.isArray(raw.calendar) ? raw.calendar : [];
   const shopping = Array.isArray(raw.shopping) ? raw.shopping : [];
@@ -43,7 +45,12 @@ function FridgePage(props: FridgeProps | any) {
   const dateLabel = `${weekdayLong}, ${dayNumStr} ${monthLong}`;
   const hourDublin = Number(new Intl.DateTimeFormat("en-GB", { hour: "numeric", hour12: false, timeZone: HOUSEHOLD_TZ }).format(nowDate));
   const greeting = hourDublin < 12 ? "Good morning" : hourDublin < 18 ? "Good afternoon" : "Good evening";
-  const partner: PersonKey = currentUser === "aisling" ? "ciaran" : "aisling";
+  const partner: PersonKey = getPartnerKey(currentUser);
+  const isFriends = (() => {
+    try { return localStorage.getItem("couple_v1_connection_type") === "friends"; } catch { return false; }
+  })();
+  const currentName = (PERSONS as any)[currentUser]?.name || (typeof currentUser === "string" ? currentUser : "You");
+  const partnerName = (PERSONS as any)[partner]?.name || partner;
 
   const activeChores = useMemo(() => (chores as any[]).filter((c) => !(c as any).deletedAt), [chores]);
   const activeCalendar = useMemo(() => (calendar as any[]).filter((ev: any) => !(ev as any).deletedAt), [calendar]);
@@ -170,14 +177,14 @@ function FridgePage(props: FridgeProps | any) {
         <div className="relative mt-5">
           <div className="nylah-script-hero text-[40px] font-semibold" style={{ fontFamily: "var(--font-display)", color: "var(--text)", opacity: 1, fontWeight: 600, textRendering: 'optimizeLegibility', WebkitFontSmoothing: 'antialiased' }}>{greeting.toLowerCase()}</div>
           <h1 className="nylah-display-hero text-[46px] -mt-1" style={{ fontFamily: "var(--font-display)", color: "var(--text)", lineHeight: 0.92, letterSpacing: '-0.02em', fontWeight: 600 }}>
-            {((PERSONS as any)[currentUser]?.name || currentUser || "You")}
+            {currentName}
             <span className="ml-2 inline-flex items-baseline gap-2 align-baseline">
-              <span className="text-[20px] font-light" style={{ fontFamily: "var(--font-ui)", fontWeight: 400, color: "var(--muted)", letterSpacing: '-0.01em' }}>with</span>
-              <span className="nylah-script-hero text-[34px]" style={{ fontFamily: "var(--font-script)", color: "var(--accent-warm)", fontWeight: 500, textShadow: '0 1px 0 rgba(255,255,255,0.4)' } as any}>{(PERSONS as any)[partner]?.name || partner}</span>
+              <span className="text-[20px] font-light" style={{ fontFamily: "var(--font-ui)", fontWeight: 400, color: "var(--muted)", letterSpacing: '-0.01em' }}>{isFriends ? "&" : "with"}</span>
+              <span className="nylah-script-hero text-[34px]" style={{ fontFamily: isFriends ? "var(--font-display)" : "var(--font-script)", color: "var(--accent-strong)", fontWeight: 500, textShadow: '0 1px 0 rgba(255,255,255,0.4)' } as any}>{partnerName}</span>
             </span>
           </h1>
           <div className="mt-2 flex items-center gap-2 text-[11px] tracking-[0.12em] uppercase" style={{ fontFamily: "var(--font-ui)", color: "var(--muted)", fontWeight: 500 }}>
-            <span className="h-px w-8" style={{ background: "var(--border)" }} /> {(PERSONS as any)[currentUser]?.name || (typeof currentUser==='string' ? currentUser : 'You')} ♥ {(PERSONS as any)[partner]?.name || partner} • Beirt
+            <span className="h-px w-8" style={{ background: "var(--border)" }} /> {currentName} {isFriends ? "•" : "♥"} {partnerName} • Beirt
           </div>
         </div>
         {/* single subtle glow - cut extra blobs */}
