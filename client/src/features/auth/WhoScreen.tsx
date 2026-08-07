@@ -75,6 +75,19 @@ export function WhoScreen({ onPick, onSelect }: { onPick?: (k: PersonKey)=>void;
             );
           })}
         </div>
+        <button
+          onClick={() => {
+            try {
+              localStorage.removeItem("couple_v1_onboarding_completed");
+              localStorage.removeItem("couple_v1_onboarded_at");
+              localStorage.setItem("couple_v1_force_onboard", "1");
+            } catch {}
+            location.reload();
+          }}
+          className="mt-4 text-[12px] font-medium text-[var(--muted)] hover:text-[var(--text)] transition underline text-center w-full min-h-[44px]"
+        >
+          Create a new space or join another space →
+        </button>
       </div>
     </div>
   );

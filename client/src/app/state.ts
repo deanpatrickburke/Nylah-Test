@@ -412,12 +412,9 @@ export function shouldShowOnboarding(): boolean {
     } catch {}
 
     const onboardCompleted = localStorage.getItem("couple_v1_onboarding_completed");
-    const onboardedAt = localStorage.getItem("couple_v1_onboarded_at");
-    if (onboardCompleted === "true" || onboardedAt) return false;
+    if (onboardCompleted === "true") return false;
 
-    const hid = getStoredHouseholdId();
-    if (hid && hid.length >= 3 && hid !== "ash-ciaran-2026") return false;
-
+    // Default for any session where onboarding was not explicitly completed: Show Onboarding (Sign-Up)
     return true;
   } catch { return true; }
 }
