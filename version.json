@@ -1,9 +1,9 @@
 {
-  "build": "v133-beirt-scoreboard-icons",
-  "builtAt": "2026-08-07T15:00:00.000Z",
-  "changelog": "Championship proper scoreboard — 50/50 fix, no duplicate RESETS, leaderboard table, clear head-to-head + Race to 600 + timer + streak — expanded 84-icon library with categories for chore picker — deck card jazzed with color wash & bigger icon",
-  "code": 133,
+  "build": "v134-beirt-light-scoreboard",
+  "builtAt": "2026-08-07T15:12:00.000Z",
+  "changelog": "v5 lighter airy scoreboard — removed black slab, theme-aware, soft chips, thin tracks, lighter timer",
+  "code": 134,
   "mandatory": false,
-  "timestamp": "2026-08-07T15:00:00.000Z",
-  "version": "133.0.0"
+  "timestamp": "2026-08-07T15:12:00.000Z",
+  "version": "134.0.0"
 }
