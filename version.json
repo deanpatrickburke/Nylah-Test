@@ -1,1 +1,1 @@
-{"build":"v149-single-settings-centered-icon","code":149,"changelog":"single switch profile sheet only no second settings raw JSON removed health only icon house glyph recentered 223-802 bbox"}
+{"build":"v150-icon-fix-any+maskable","code":150,"changelog":"fix install logo: any=transparent-circle centred 110k + maskable=black-square centred, manifest split"}
