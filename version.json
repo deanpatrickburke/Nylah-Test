@@ -1,1 +1,1 @@
-{"build":"v141-beirt-icon-centered-v2","code":141,"changelog":"fix icon massively off-center — centroid-based rebake 84%@1024/512 86%@192 lifted 1.8%, black #121214 bg, real 26k/167k/623k icons, manifest any+maskable, apple 180/192/512"}
+{"build":"v142-beirt-icon-optical","code":142,"changelog":"optical center icon — tight 583×671 crop, 84% fill, -1.2% x left, 1.8% y lift, balanced L24/R29 T12/B20 on 192"}
