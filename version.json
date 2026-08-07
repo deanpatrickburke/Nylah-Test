@@ -1,1 +1,1 @@
-{"build":"v137-beirt-icon-centered","code":137,"changelog":"fix app icon off-center + tiny — rebaked 192/512 to 84-86% canvas centered optical lift, maskable-safe","mandatory":false}
+{"build":"v138-beirt-icon-installable","code":138,"changelog":"fix generic Google logo — manifest any+maskable ../icon paths, apple-touch real icon not 1x1 placeholder, full-bleed 84% centered icon","mandatory":false}
