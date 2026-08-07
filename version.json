@@ -1,1 +1,1 @@
-{"build":"v136b-fix-clipping","code":136,"changelog":"fix How heavy 10-dot clipping — grid layout no clip"}
+{"build":"v137-beirt-icon-centered","code":137,"changelog":"fix app icon off-center + tiny — rebaked 192/512 to 84-86% canvas centered optical lift, maskable-safe","mandatory":false}
