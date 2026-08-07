@@ -1,1 +1,1 @@
-{"build":"v152-onboarding-secure","code":152,"commit":"WIP","time":"2026-08-07T19:23Z","stack":"scalable-dynamic-any-maskable-robust-onboarding-server-pin"}
+{"build": "v152a-onboarding-patch", "code": 152, "patch": "rpc p_code fallback"}
