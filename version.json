@@ -1,1 +1,1 @@
-{"build":"v140-beirt-blackscreen-fix","code":140,"changelog":"fix black screen — restore supabase-env.js injection before module, re-run vite build without SDK wrapper miss"}
+{"build":"v141-beirt-icon-centered-v2","code":141,"changelog":"fix icon massively off-center — centroid-based rebake 84%@1024/512 86%@192 lifted 1.8%, black #121214 bg, real 26k/167k/623k icons, manifest any+maskable, apple 180/192/512"}
