@@ -1,1 +1,1 @@
-{"build":"v139-beirt-dark-deck","code":139,"changelog":"fix deck white-on-white dark mode","mandatory":false}
+{"build":"v140-beirt-blackscreen-fix","code":140,"changelog":"fix black screen — restore supabase-env.js injection before module, re-run vite build without SDK wrapper miss"}
