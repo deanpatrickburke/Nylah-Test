@@ -1,5 +1,5 @@
 // Beirt SW v130 onboarding fix - fresh browser shows Create our space
-const CACHE_NAME = "beirt-v130-onboarding-fix";
+const CACHE_NAME = "beirt-v131-championship-arena";
 const URLS = ["./","./index.html","./manifest.webmanifest"];
 self.addEventListener("install", e=>{
   e.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(URLS.map(u=>new Request(u,{cache:"reload"}))).catch(()=>{})));

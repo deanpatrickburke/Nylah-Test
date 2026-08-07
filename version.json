@@ -1,9 +1,9 @@
 {
-  "build": "v130-onboarding-fresh-fix",
-  "builtAt": "2026-08-07T14:35:00.000Z",
-  "changelog": "Fix fresh browser onboarding \u2014 build marker no longer skips Create our space",
-  "code": 130,
-  "mandatory": true,
-  "timestamp": "2026-08-07T14:35:00.000Z",
-  "version": "130.0.0"
+  "build": "v131-championship-arena",
+  "builtAt": "2026-08-07T14:45:00.000Z",
+  "changelog": "Black spotlight coliseum arena — tug-of-war track, floating crown, trophy VS, digital scoreboard, Hall of Belts, reduced-motion safe",
+  "code": 131,
+  "mandatory": false,
+  "timestamp": "2026-08-07T14:45:00.000Z",
+  "version": "131.0.0"
 }
