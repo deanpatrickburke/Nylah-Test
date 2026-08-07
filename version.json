@@ -1,1 +1,1 @@
-{"build":"v150-icon-fix-any+maskable","code":150,"changelog":"fix install logo: any=transparent-circle centred 110k + maskable=black-square centred, manifest split"}
+{"build":"v151-manifest-fix","code":151,"changelog":"fix double manifest, use any circle 21k 110k + maskable square 17k 102k, strip old hashed manifest"}
