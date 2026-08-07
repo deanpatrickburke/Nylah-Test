@@ -1,1 +1,1 @@
-{"build": "v152a-onboarding-patch", "code": 152, "patch": "rpc p_code fallback"}
+{"build":"v151-manifest-fix","code":151,"changelog":"fix double manifest, use any circle 21k 110k + maskable square 17k 102k, strip old hashed manifest"}
