@@ -1,1 +1,1 @@
-{"build":"v146-beirt-fix-white-screen","code":146,"changelog":"fix vite base absolute /assets/ causing white screen, run via bun build.mjs so relative ./assets/ + GH pages"}
+{"build":"v147-boutique-settings","code":147,"changelog":"full boutique Settings redesign single page grouped dropdowns warm pastel Hume dark spring 44px no hardcoded white"}
