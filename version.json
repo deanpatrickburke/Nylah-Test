@@ -1,9 +1,1 @@
-{
-  "build": "v132-beirt-logo-transparent",
-  "builtAt": "2026-08-07T15:30:00.000Z",
-  "changelog": "New transparent Beirt logo — beige house + mint + orange on black #121214, maskable-safe centered, arena retained",
-  "code": 132,
-  "mandatory": false,
-  "timestamp": "2026-08-07T15:30:00.000Z",
-  "version": "132.0.0"
-}
+{"build":"v132-beirt-logo-transparent","code":132,"changelog":"New transparent Beirt logo — beige house + mint + orange on black #121214, maskable-safe centered"}
