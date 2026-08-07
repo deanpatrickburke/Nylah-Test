@@ -1,0 +1,33 @@
+*** App.tsx updater wiring – auto-generated 2026-08-03 (Task 4)
+
+diff --git a/client/src/App.tsx b/client/src/App.tsx
+--- a/client/src/App.tsx
++++ b/client/src/App.tsx
+@@ -1,6 +1,7 @@
+ import { useEffect, useMemo, useRef, useState } from "react";
+ import { createPortal } from "react-dom";
+ import { getSupabase, hasSupabaseConfig, saveSupabaseConfig, TOKEN as SB_TOKEN } from "./lib/supabase";
++import { UpdaterBanner } from "./components/UpdaterBanner";
+ import { remoteLoad, remoteSave, subscribeRemote } from "./lib/remoteSync";
+ 
+ // ---- robust storage ----
+@@ -2672,6 +2673,7 @@ function V1AppShell({
+         <div className="flex items-center justify-between px-3.5 pt-3 pb-2 bg-[#FFFCF8] border-b" style={{ borderColor: theme.cardBd }}>
+           <button onClick={() => setTab("fridge")} aria-label="back home" className="grid h-8 w-8 place-items-center rounded-full bg-white border active:scale-[0.96] transition" style={{ borderColor: theme.cardBd }}><IconChevronLeft className="h-4 w-4" /></button>
+           <button onClick={() => setShowSwitch(true)} className="flex items-center gap-1.5 rounded-full bg-[#F7EFE8] border px-2.5 py-1 text-[11px] font-medium" style={{ borderColor: theme.cardBd }}>
+             <span className="h-2 w-2 rounded-full" style={{ background: PERSONS[currentUser].accent }} />{PERSONS[currentUser].name} • using
+           </button>
+           <div className="flex items-center gap-1.5"><button onClick={() => setShowBlueprint(true)} className="grid h-8 w-8 place-items-center rounded-full bg-white border active:scale-[0.96]" style={{ borderColor: theme.cardBd }}>⚙</button><div className="flex items-center gap-1.5 text-[10px] text-[#5A5655]"><span className="rounded-full bg-[#8DA08E] animate-pulse" style={{ width: "6px", height: "6px", display: "inline-block" }} />Synced {syncedSec === 0 ? "now" : syncedSec + "s ago"}</div></div>
+         </div>
++        <div className="px-3.5 pb-1 bg-[#FFFCF8]"><UpdaterBanner /></div>
+         <div className="wash px-4 pt-2 pb-2.5" style={{ background: theme.phoneBg }}><div className="flex items-center justify-between text-[11px]"><span className="font-medium tracking-wide text-[#292624]">9:41</span><span className="rounded-full bg-[#0A0A0A] px-2.5 py-1 text-[10px] text-white">{PERSONS.aisling.name} & {PERSONS.ciaran.name}</span><span className="text-[10px] text-[#5A5655]">{theme.name}</span></div></div>
+
+ Implementation notes:
+ - If V1AppShell large merge conflicts, manually insert:
+   1. import line top
+   2. <UpdaterBanner /> below top bar div
+ - UpdaterBanner already shows pill near sync dot styling (rounded-full bg-[#0A0A0A] text-white 11px).
+ - No companion bloat: only uses @capacitor/browser + filesystem + preferences (pre-existing dep check).
+ - checkForUpdate() runs every 15m, fetch /version.json? t=Date.now()
+ - Browser.open handles apkUrl, fallback window.location reload for web-wrapper strategy.
+

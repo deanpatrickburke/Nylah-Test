@@ -1,0 +1,16 @@
+# nylah build junk
+*.zip
+.space-build-*
+.space-build-cloudflare
+.space-build-cvm
+audits/
+nylah-os-*
+NYLAH-OS-*
+.nx/
+node_modules/
+dist/
+client/dist/
+.supabase/
+app.db
+your_files/
+.gh-pages-worktree/

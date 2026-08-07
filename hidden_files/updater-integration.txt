@@ -1,0 +1,26 @@
+UpdaterBanner integration – if App.tsx risky edit avoided, manual insertion:
+
+File: client/src/App.tsx
+Near V1AppShell top bar (around line 2770-2775)
+
+Find:
+  const [showBlueprint, setShowBlueprint] = useState(false);
+...
+  <div className="flex items-center gap-1.5"><button onClick={() => setShowBlueprint(true)} ...
+
+Insert import at top:
+  import { UpdaterBanner } from "./components/UpdaterBanner";
+
+Then change top bar container:
+  before: <div className="flex items-center gap-1.5"><button onClick={() => setShowBlueprint(true)} ...>⚙</button><div ...>Synced ...
+  after:  <div className="flex items-center gap-1.5"><UpdaterBanner /><button onClick={() => setShowBlueprint(true)} ...>⚙</button><div ...>Synced ...
+
+Also keep fallback row below top bar:
+  <div className="px-3.5 pb-1 bg-[#FFFCF8]"><UpdaterBanner /></div>
+
+This places pill near sync dot (LinkStatus dot is the green pulsing dot). UpdaterBanner itself returns null when no update, so no layout shift.
+
+If App.tsx already has UpdaterBanner imported, only add extra instance in top bar div.
+
+Build check: HATCH_SPACES_BUILD_DRIVER=1 npm run build should still succeed; updater.ts has no Capacitor import at top (dynamic import inside functions) so web build safe.
+

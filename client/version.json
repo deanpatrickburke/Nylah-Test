@@ -1,0 +1,7 @@
+{
+  "build": "v157-sync-rescue-shopping-trips",
+  "code": 157,
+  "changelog": "sync rescue when hid lost (fallback scan + legacy ash-ciaran-2026), merge remote calendar/notes into local, realtime subscribe merge, shopping trips grouped",
+  "mandatory": false,
+  "builtAt": "2026-08-07T20:32:00Z"
+}

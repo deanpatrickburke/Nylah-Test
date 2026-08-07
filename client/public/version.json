@@ -1,0 +1,7 @@
+{
+  "build": "v156-settings-slice-fix",
+  "code": 156,
+  "changelog": "fix Settings crash slice null effId, guard Biometrics PERSONS, v155 persons normalize still live",
+  "mandatory": false,
+  "builtAt": "2026-08-07T20:22:00Z"
+}

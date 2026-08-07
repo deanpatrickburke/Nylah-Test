@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "ES2022",
+      "DOM"
+    ],
+    "jsx": "react-jsx",
+    "types": [
+      "bun-types",
+      "react",
+      "react-dom"
+    ],
+    "rootDir": "..",
+    "tsBuildInfoFile": "./.tsbuildinfo.client",
+    "paths": {
+      "@space/server/*": [
+        "../server/src/*"
+      ],
+      "@space/privileged": [
+        "../server/.generated/privileged.contract"
+      ]
+    },
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
+  },
+  "include": [
+    "src/**/*",
+    "../server/src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".tsbuildinfo.client",
+    "src/**/*.test.ts",
+    "src/**/__tests__",
+    "src/**/*.spec.ts",
+    "vitest.config.ts"
+  ]
+}

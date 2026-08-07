@@ -1,0 +1,53 @@
+name: Deploy Beirt to Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install deps
+        working-directory: client
+        run: npm ci || npm install
+      - name: Build V144
+        run: |
+          cd client
+          npx vite build --outDir dist
+          cp -r public/* dist/ || true
+          rm -f dist/supabase-init.sql
+          test ! -f dist/supabase-init.sql && echo "no sql PASS" || (echo "FAIL sql present" && exit 1)
+          ls -lh dist
+          ls -lh dist/assets | head
+          if ! grep -q "supabase-env.js" dist/index.html; then echo "FAIL no env"; exit 1; fi
+          if grep -q '"/assets/' dist/index.html; then echo "FAIL absolute assets"; exit 1; fi
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: client/dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

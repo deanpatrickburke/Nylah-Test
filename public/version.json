@@ -1,0 +1,9 @@
+{
+  "build": "v132-beirt-logo-transparent",
+  "builtAt": "2026-08-07T14:45:00.000Z",
+  "changelog": "Fix polish — empty shop filter, calendar pending dark-safe, settings debug dark-safe, transparent Beirt logo beige house mint orange on black",
+  "code": 132,
+  "mandatory": false,
+  "timestamp": "2026-08-07T14:45:00.000Z",
+  "version": "132.0.0"
+}
