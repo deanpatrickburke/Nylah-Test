@@ -1,1 +1,1 @@
-{"build":"v143-beirt-recover-login","code":143,"changelog":"add recovery: accept full hid ash-ciaran-2026, Recover Ash&Ciaran button, I have a code/recover screen with explanation, fix join lookup hid candidates"}
+{"build":"v144-beirt-scalable","code":144,"changelog":"scalable: households+invites+pins normalized, no hard-coded ash-ciaran, create/join via 6-char code, dynamic PersonKey, offline respect, reallyOnline fix"}
