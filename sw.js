@@ -1,5 +1,5 @@
 // Beirt SW v132 transparent logo
-const CACHE_NAME = 'beirt-v132-transparent';
+const CACHE_NAME = 'beirt-v132-polish-2';
 const URLS = ["./","./index.html","./manifest.webmanifest"];
 self.addEventListener("install", e=>{
   e.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(URLS.map(u=>new Request(u,{cache:"reload"}))).catch(()=>{})));
