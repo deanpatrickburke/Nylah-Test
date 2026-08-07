@@ -1,9 +1,1 @@
-{
-  "build": "v134-beirt-light-scoreboard",
-  "builtAt": "2026-08-07T15:12:00.000Z",
-  "changelog": "v5 lighter airy scoreboard — removed black slab, theme-aware, soft chips, thin tracks, lighter timer",
-  "code": 134,
-  "mandatory": false,
-  "timestamp": "2026-08-07T15:12:00.000Z",
-  "version": "134.0.0"
-}
+{"build":"v135-beirt-editorial-board","code":135,"changelog":"v6 editorial de-vibe-code generic — Fraunces + Pinyon vs, linen avatars, hairline ink tracks, single-line Lead summary, receipt hall","mandatory":false}

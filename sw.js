@@ -1,5 +1,5 @@
 // Beirt SW v134 light scoreboard
-const CACHE_NAME = 'beirt-v134-light-board';
+const CACHE_NAME = 'beirt-v135-editorial-board
 const URLS = ["./","./index.html","./manifest.webmanifest"];
 self.addEventListener("install", e=>{
   e.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(URLS.map(u=>new Request(u,{cache:"reload"}))).catch(()=>{})));
