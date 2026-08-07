@@ -1,7 +1,7 @@
 {
-  "build": "v156-settings-slice-fix",
-  "code": 156,
-  "changelog": "fix Settings crash slice null effId, guard Biometrics PERSONS, v155 persons normalize still live",
+  "build": "v157-sync-rescue-shopping-trips",
+  "code": 157,
+  "changelog": "sync rescue when hid lost (fallback scan + legacy ash-ciaran-2026), merge remote calendar/notes into local, realtime subscribe merge, shopping trips grouped",
   "mandatory": false,
-  "builtAt": "2026-08-07T20:22:00Z"
+  "builtAt": "2026-08-07T20:32:00Z"
 }
