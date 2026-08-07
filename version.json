@@ -1,1 +1,1 @@
-{"build":"v151-manifest-fix","code":151,"changelog":"fix double manifest, use any circle 21k 110k + maskable square 17k 102k, strip old hashed manifest"}
+{"build":"v152-onboarding-secure","code":152,"commit":"WIP","time":"2026-08-07T19:23Z","stack":"scalable-dynamic-any-maskable-robust-onboarding-server-pin"}
