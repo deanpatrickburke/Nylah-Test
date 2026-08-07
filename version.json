@@ -1,7 +1,7 @@
 {
-  "build": "v155-fix-email-persons",
-  "code": 155,
-  "changelog": "fix email recovery returning Partner 1/2 -> real names Aisling/Ciaran, normalize persons from household name",
+  "build": "v156-settings-slice-fix",
+  "code": 156,
+  "changelog": "fix Settings crash slice null effId, guard Biometrics PERSONS, v155 persons normalize still live",
   "mandatory": false,
-  "builtAt": "2026-08-07T19:14:36.369568Z"
+  "builtAt": "2026-08-07T20:22:00Z"
 }
